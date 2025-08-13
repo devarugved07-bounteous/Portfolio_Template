@@ -4,12 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
+    <title>Portfolio Template</title>
     <Style>
         * {
             margin: 0;
             padding: 0;
             background-color: black;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .grid-container p {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .nav-items,
@@ -19,10 +34,9 @@
             list-style-type: none;
             display: flex;
             flex-direction: row;
-            position: sticky;
-            top: 0;
 
         }
+
         .nav-items1:hover {
             cursor: pointer;
             color: aquamarine;
@@ -45,6 +59,14 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            position: sticky;
+            top: 0;
+
+        }
+
+        .letter::first-letter {
+            font-size: 30px;
+            color: rgb(239, 212, 9)
         }
 
         .name {
@@ -70,11 +92,107 @@
 
         .Experience {
             color: green;
-            margin: 50px 500px 50px 500px;
+            margin: 50px 100px 50px 100px;
+            font-family: Arial, sans-serif;
         }
 
         h2 {
             margin-bottom: 15px;
+        }
+
+        .projects-section {
+            margin: 50px 20px;
+        }
+
+        .projects-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: green;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .project-card {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #00d9ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-card a:hover {
+            color: #00ffaa;
+        }
+
+        .contact-section {
+            color: green;
+            margin: 50px auto;
+            max-width: 400px;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 10px;
+            border: none;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            color: green;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: burlywood;
+            color: black;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #d2b48c;
+        }
+
+        .footer{
+            color: green;
+            margin: 20px;
+            
         }
     </Style>
 </head>
@@ -89,13 +207,12 @@
                 <li class="nav-items1">Contact</li>
             </ol>
         </nav>
-
     </div>
 
     <div class="intro-parent">
         <div class="intro">
             <h2>Introduction</h2>
-            <P>
+            <p class="letter">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente atque sed magnam, ducimus harum aut
                 deleniti commodi deserunt ad similique illum ex earum voluptas aspernatur reiciendis dicta esse, dolor
                 incidunt enim nobis vero. Cupiditate harum excepturi, animi maxime facilis hic tempora dolore nemo
@@ -103,13 +220,15 @@
                 deleniti. Architecto asperiores modi, officia saepe eligendi recusandae rem vel mollitia eos obcaecati
                 veniam veritatis alias, ipsum labore sint beatae magni harum ea quia unde quos placeat maiores? Quae
                 impedit deserunt laudantium, illum maxime iusto illo esse itaque ratione! Tempore cumque nulla error.
-            </P>
+            </p>
         </div>
         <div class="Education">
             <h2>Education</h2>
-            <p>Class X - ABC Ravindra Bharathi School 9.3</p>
-            <p>Class X - ABC Ravindra Bharathi School 9.3</p>
-            <p>Class X - ABC Ravindra Bharathi School 9.3</p>
+            <div class="grid-container">
+                <p>Class X - ABC Ravindra Bharathi School 9.3</p>
+                <p>Class X - ABC Ravindra Bharathi School 9.3</p>
+                <p>Class X - ABC Ravindra Bharathi School 9.3</p>
+            </div>
         </div>
     </div>
 
@@ -123,6 +242,60 @@
         Vero obcaecati velit nemo officia fugiat aut minus non omnis asperiores nihil. Asperiores iure explicabo
         nesciunt, quos cumque assumenda quod.
     </div>
+
+
+    <div class="projects-section">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="https://placehold.co/250X150" alt="Project 1">
+                <a href="$" target="_blank">Project One</a>
+            </div>
+            <div class="project-card">
+                <img src="https://placehold.co/250X150" alt="Project 2">
+                <a href="#" target="_blank">Project Two</a>
+            </div>
+            <div class="project-card">
+                <img src="https://placehold.co/250X150" alt="Project 3">
+                <a href="#" target="_blank">Project Three</a>
+            </div>
+            <div class="project-card">
+                <img src="https://placehold.co/250X150" alt="Project 3">
+                <a href="#" target="_blank">Project Four</a>
+            </div>
+            <div class="project-card">
+                <img src="https://placehold.co/250X150" alt="Project 3">
+                <a href="#" target="_blank">Project Five</a>
+            </div>
+            <div class="project-card">
+                <img src="https://placehold.co/250X150" alt="Project 3">
+                <a href="#" target="_blank">Project Six</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <h2>Connect With Me</h2>
+        <form class="contact-form" action="https://github.com/devarugved07012004" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="2" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <section>
+        <footer class="footer">
+            <h1>&copy; 2025 @ Deva Rugved</h1>
+        </footer>
+    </section>
+
 
 
 
